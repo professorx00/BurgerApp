@@ -2,24 +2,11 @@
 var orm = require("../config/orm.js");
 
 const burger = {
-    
+    all: function(cb){
+        orm.all((data)=>{
+            cb(data)
+        })
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = burger;
