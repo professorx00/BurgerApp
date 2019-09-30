@@ -17,5 +17,21 @@ router.get("/", function(req,res){
     });
 });
 
+router.post("/",function(req,res){
+    console.log("routing post request")
+    console.log(req.body.burger)
+    burger.add(req.body.burger,function(result) {
+        // Send back the ID of the new quote
+        res.json({ id: result.insertId });
+      });
+    
+})
+
+router.put("/",function(req,res){
+    console.log("updating burger");
+    burger.update(req.body.id, function(result){
+        res.json({ id: result.insertId });
+    });
+})
 
 module.exports = router;

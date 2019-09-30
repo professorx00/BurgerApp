@@ -9,11 +9,18 @@ const orm = {
             });
     },
     add: function (burgerName,cb) {
-        connection.query("INSERT INTO 'BURGERS' (devoured,burger_name) values (0,?)",[burgerName], function (err, data) {
+        connection.query("INSERT INTO `burgertown`.`burgers` (`burger_name`) VALUES (?)",[burgerName], function (err, data) {
+            console.log("added Burger")
             if(err) throw err;
             cb(data);
         });
-}
+    },
+    update: function(id,cb){
+        connection.query("update burgers set devoured = 1 where id=?",[id],function(err,data){
+            if(err) throw err;
+            cb(data);
+        })
+    }
 }
 
 module.exports = orm;

@@ -15,9 +15,6 @@ app.set("view engine", "handlebars");
 
 
 app.use("/",routes);
-app.use("/public", function(){
-    console.log("public")
-})
 
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
