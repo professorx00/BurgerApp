@@ -1,4 +1,5 @@
 <div class="col s12 m6 l6 right-align" id="burgers">
+    <h3>Soon to be Devoured</h3>
     {{#each burgers}}
     {{#unless devoured}}
     <div class="row">
@@ -14,6 +15,7 @@
 </div>
 
 <div class="col s12 m6 l6" id="devouredBurgers">
+    <h3>Devoured</h3>
     {{#each burgers}}
     {{#if devoured}}
     <li class="devoured">{{id}}. Burger: {{burger_name}}</li>

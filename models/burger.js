@@ -16,6 +16,11 @@ const burger = {
         orm.update(id,function(res){
             cb(res);
         })
+    },
+    getuser:function(username,cb){
+        orm.getuser(username,function(res){
+            cb(res)
+        })
     }
 }
 
