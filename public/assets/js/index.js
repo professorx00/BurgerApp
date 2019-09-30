@@ -1,21 +1,8 @@
-let userid=0;
-let username='';
-
-$("#userLogin").on("click",function(event){
-    event.preventDefault();
-    username=$("#userName").val()
-    $.ajax("/users/"+username,{
-        type:"GET"
-    }).then(function(data){
-        userid=data[0].id;
-    })
-})
-
 
 $("#addBurgerBtn").on("click",function(event){
     event.preventDefault();
-    let burger = {burger: $("#addBurger").val(),userid: userid}
-    $.ajax("/burger", {
+    let burger = {burger: $("#addBurger").val()}
+    $.ajax("/", {
         type: "POST",
         data: burger
       }).then(function() {
@@ -27,9 +14,9 @@ $("#addBurgerBtn").on("click",function(event){
 $(".devourBurger").on("click",function(event){
     event.preventDefault();
     console.log("clicking")
-    let id = {id: $(this).attr("data"),userid:userid}
+    let id = {id: $(this).attr("data")}
     console.log(id);
-    $.ajax("/burger",{
+    $.ajax("/",{
         type: "PUT",
         data: id
     }).then(function(){
