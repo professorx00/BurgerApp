@@ -1,37 +1,52 @@
 const express = require("express");
 const router = express.Router();
 const burger = require("../models/burger.js") 
+const SQL= require("sequelize");
 // this calls for the DATA
+const Op = SQL.Op
 
 router.get("/", function(req,res){
-    burger.all((data)=>{
-        let burgers = []
-        data.forEach((element,index) => {
-            burgers.push({burger_name:element.burger_name,devoured:element.devoured,id:element.id,number:index})
+    let burgers=[]
+    burger.findAll({}).then((result)=>{
+        result.forEach(element => {
+            burgers.push({
+                id: element.dataValues.id,
+                burgerName: element.dataValues.burgerName,
+                devoured: element.dataValues.devoured,
+            })
+            console.log(element.dataValues.burgerName)
         });
-        let hbsObject ={
-            burgers: burgers
-        }
-        console.log(data);
-        res.render("index",hbsObject)
-    });
+        res.render("index",{burgers: burgers});
+    }).catch(err=>{
+        console.log(err);
+        res.status(500).end();
+      });
 });
 
 router.post("/",function(req,res){
-    console.log("routing post request")
-    console.log(req.body.burger)
-    burger.add(req.body.burger,function(result) {
-        // Send back the ID of the new quote
-        res.json({ id: result.insertId });
-      });
-    
+    burger.create({
+        burgerName: req.body.burger
+    }).then((results)=>{
+        console.log(results);
+        res.status(200).end()
+    }).catch(err=>{res.status(500).end()})
 })
 
 router.put("/",function(req,res){
-    console.log("updating burger");
-    burger.update(req.body.id, function(result){
-        res.json({ id: result.insertId });
-    });
+    burger.update({
+        devoured: 1
+    },{
+        where:{
+            id:{
+                [Op.eq]: req.body.id
+            }
+        }
+    }).then((result)=>{
+        res.send(result).status(200).end()
+    }).catch(err=>{
+        console.log(err);
+        res.status(500).end();
+      });
 })
 
 module.exports = router;

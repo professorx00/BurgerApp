@@ -1,22 +1,17 @@
-// Export the database functions for the controller (BurgersController.js).
-var orm = require("../config/orm.js");
+const SQL= require("sequelize");
+const model = require("../config/connection.js");
 
-const burger = {
-    all: function(cb){
-        orm.all((data)=>{
-            cb(data)
-        })
+const burger = model.define('burgers',{
+    burgerName:{
+        type:SQL.STRING,
+        allowNull: false
     },
-    add:function(burgerName,cb){
-        orm.add(burgerName,function(res){
-            cb(res)
-        })
-    },
-    update:function(id,cb){
-        orm.update(id,function(res){
-            cb(res);
-        })
+    devoured:{
+        type:SQL.BOOLEAN,
+        defaultValue: false,
     }
-}
+});
+
+burger.sync({force:true});
 
 module.exports = burger;
