@@ -1,20 +1,77 @@
-/* div{
-    border: red 2px solid;
-} */
-li{
+@import url('https://fonts.googleapis.com/css?family=Galindo|Skranji:700&display=swap');
+@import url("https://use.typekit.net/hvr7iwf.css");
+* {
+    font-family: dogma-bold, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Galindo', cursive;
+    color: #f2bb13;
+    text-shadow:
+}
+
+li {
     list-style: none;
 }
-*.container{
+
+body {
+    background-color: #f4A935;
+}
+
+*.container {
     padding-top: 40px;
+    background-color: #f4A935;
 }
-#burgers{
-    display:flex;
-    flex-direction: column;
+
+#imageTitle {
+    max-width: 60%;
 }
-#devouredBurgers{
-    display:flex;
-    flex-direction: column;
+
+#burgerFrame {
+    border: black 2px solid;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2933b1+0,ffc31c+100 */
+    background: #7dbf3b;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #7dbf3b 0%, #f2bb13 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #7dbf3b 0%, #f2bb13 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #7dbf3b 0%, #f2bb13 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7dbf3b', endColorstr='#f2bb13', GradientType=0);
+    /* IE6-9 */
 }
-*.devoured{
-    color: rgba(0, 0, 0, 0.37)
+
+#burgers, #devouredBurgers {
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+    background-color: #BF1736;
+}
+
+*.burgers {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border-top: solid black 1px; */
+    /* border-bottom: solid black 1px; */
+    padding: 10px !important;
+    margin: 5px;
+    background-color: #f4A935;
+}
+
+*.titles {
+    margin-bottom: 0 !important;
+    padding: 4px 10px 0px 10px !important;
+}
+
+*.burgerTitles {
+    margin-top: 2px !important;
+    padding: 2px !important;
+}
+
+#addBurger {
+    background-color: white;
 }

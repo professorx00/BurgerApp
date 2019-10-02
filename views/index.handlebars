@@ -1,19 +1,32 @@
 <div class="container">
     <div class="row">
         <div class="col s12 m12 l12 center">
-            <h1>BURGER TOWN</h1>
+            <div class="row">
+                <div class="col s12 m12">
+                    <h1>BURGER TOWN</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m4">s</div>
+                <div class="col s12 m4" id="burgerFrame">
+                    <img id="imageTitle" src="/assets/img/burger.png">
+                </div>
+                <div class="col s12 m4">s</div>
+            </div>
+
+
         </div>
     </div>
-    <div class="row">
-    {{>burgers-block}}
+    <div class="row center">
+        {{>burgers-block}}
     </div>
     <div class="row">
         <form>
             <h4 for="addBurger">Add A Burger</h4>
             <textarea name="addBurger" id="addBurger" cols="10" rows="10"></textarea>
-            <button id="addBurgerBtn" class="btn" type="submit">Add Burger</button>
-            
+            <button id="addBurgerBtn " class="btn light-green darken-1" type="submit">Add Burger</button>
+
         </form>
     </div>
-    
+
 </div>
