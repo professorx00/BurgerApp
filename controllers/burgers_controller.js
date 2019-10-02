@@ -6,8 +6,10 @@ const SQL= require("sequelize");
 const Op = SQL.Op
 
 router.get("/", function(req,res){
+    console.log("get route")
     let burgers=[]
     burger.findAll({}).then((result)=>{
+        console.log(result)
         result.forEach(element => {
             burgers.push({
                 id: element.dataValues.id,

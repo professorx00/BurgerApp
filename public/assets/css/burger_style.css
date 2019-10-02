@@ -9,7 +9,6 @@
 h1 {
     font-family: 'Galindo', cursive;
     color: #f2bb13;
-    text-shadow:
 }
 
 li {
@@ -24,9 +23,14 @@ body {
     padding-top: 40px;
     background-color: #f4A935;
 }
-
+#logo{
+    max-width: 50%;
+}
 #imageTitle {
     max-width: 60%;
+}
+*.placeholder{
+    color: #f4A935;
 }
 
 #burgerFrame {
