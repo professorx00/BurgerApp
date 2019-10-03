@@ -91,11 +91,11 @@ body {
 
 @media screen and (max-width: 600px){
     *{
-        font-size: 2em;
+        font-size: 2rem;
     }
 }
 @media screen and (max-width: 992px){
     *{
-        font-size: 2em;
+        font-size: 2rem;
     }
 }
