@@ -4,7 +4,10 @@ const model = require("../config/connection.js");
 const burger = model.define('burgers',{
     burgerName:{
         type:SQL.STRING,
-        allowNull: false
+        allowNull: false,
+        validate:{
+            len:[1,150],
+        }
     },
     devoured:{
         type:SQL.BOOLEAN,
@@ -12,6 +15,6 @@ const burger = model.define('burgers',{
     }
 });
 
-burger.sync({force:true});
+burger.sync();
 
 module.exports = burger;
