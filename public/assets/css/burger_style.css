@@ -53,6 +53,9 @@ body {
     margin-right: 3px !important;
     background-color: #BF1736;
 }
+.devoured{
+    text-decoration: line-through; 
+}
 
 *.burgers {
     min-width: 100%;
