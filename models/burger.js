@@ -15,6 +15,6 @@ const burger = model.define('burgers',{
     }
 });
 
-burger.sync({force:true});
+burger.sync();
 
 module.exports = burger;
