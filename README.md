@@ -24,9 +24,9 @@ Once page is load there will be a text area in the bottom of the page. You can t
 
 To Devour the burger press the devour button. This will bring the burger over to Eaten with a strike through it.
 
-<img src="/assets/img/BurgerTownScreenShot.png"
+<img src="./public/assets/img/BurgerTownScreenShot.png"
      alt="Burger Town Screen Shot"
-     style="float: left; margin-right: 10px;" /><br>
+     style="width: 50%;" /><br>
 
 ## Required:
 ### Dependencies
