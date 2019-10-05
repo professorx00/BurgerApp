@@ -1,11 +1,4 @@
-function reload(){
-    $.ajax("/",{
-        type:"GET"
-    }).then((data)=>{
-        console.log("WHOOOO?")
-        res.status(200).end();
-    })
-}
+
 
 $("#addBurgerBtn").on("click", function (event) {
     event.preventDefault();
@@ -15,7 +8,7 @@ $("#addBurgerBtn").on("click", function (event) {
         data: burger
     }).then(function () {
         console.log("WUBDUB DUB");
-        reload();
+        location.reload();
     });
 })
 
@@ -30,7 +23,7 @@ $(".devourBurger").on("click", function (event) {
     }).then(function () {
         console.log("Get Schwitzy")
         $('#imageTitle').attr("src", '/assets/img/burgerAnimatedsm.gif');
-        setTimeout(()=>{reload();},2200)
+        setTimeout(()=>{location.reload();},2200)
         
     });
 })
