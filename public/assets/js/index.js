@@ -1,6 +1,8 @@
 function reload(){
     $.ajax("/",{
         type:"GET"
+    }).then((data)=>{
+        res.status(200).end();
     })
 }
 
