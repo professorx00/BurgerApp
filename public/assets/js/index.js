@@ -2,6 +2,7 @@ function reload(){
     $.ajax("/",{
         type:"GET"
     }).then((data)=>{
+        console.log("WHOOOO?")
         res.status(200).end();
     })
 }
